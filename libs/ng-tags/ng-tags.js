@@ -599,18 +599,21 @@ angular.module("NgTagsInput.tagsinput", [])
                         }
                     }
                     $(element).click(function(event) {
-                        input.show(0);
-                        input.focus();
-                        $(element).addClass("focus");
                         event.stopPropagation();
-                    });
-                    $('html').click(function() {
-                        $(element).removeClass("focus");
-                        input.hide(0);
-                        scope.$apply(scope.deleteIndex = -1);
+                        if (!$(input).is(":focus")) {
+                            input.show(0);
+                            input.focus();
+                            $(element).addClass("focus");
+                        }
                     });
                     input.focus(function() {
                         $(element).addClass("focus");
+                    });
+                    input.blur(function() {
+                        $(element).removeClass("focus");
+                        if (!("placeholder" in attrs)) {
+                            input.hide(0);
+                        }
                     });
                     scope.tags = scope.$parent[attrs.ngTags];
 

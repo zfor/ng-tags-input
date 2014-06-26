@@ -27,15 +27,30 @@
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                
+
             </div><!-- /.container-fluid -->
         </nav>
 
-
-
-
         <div class="container" ng-controller="TestController">
-            <form role="form" class="col-md-12 well">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Getting started</h2>
+                    <h4>Install</h4>
+                    <ul>
+                        <li>
+                            <p>After downloading all files of ng-tags-input, you have to add the ng-tags-input javascript file to your page</p>
+                            <p>Make sure it's after the AngularJS script</p>
+                            <pre>&lt;script src="path/to/angular.js">&lt;/script><br/>&lt;script src="path/to/ng-tags-input.js">&lt;/script></pre>
+                        </li>
+                        <li>
+                            <p>And the css</p>
+                            <pre>&lt;link rel="stylesheet" href="path/to/ng-tags-input.css">&lt;/script></pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <form role="form" class="col-md-12">
                 <div class="form-group col-md-6">
                     <label for="exampleInput1">Regular bootstrap input</label>
                     <input type="text" class="form-control" id="exampleInput1" onkeypress="console.log(event)">
@@ -64,8 +79,8 @@
 
                 <div class="form-group col-md-6">
                     <label>Tags input with typeahead 2</label>
-                    <div ng-tags="tags5" animate ></div>
-                    <pre style="margin-top: 5px;">&lt;div ng-tags="tags4" animate tag-typeahead="o.cc_iso_a3 as o.country_name for o in typeaheadSource">&lt;/div></pre>
+                    <div ng-tags="tags5" animate tag-typeahead="o for o in typeaheadSource2" placeholder="Placeholder"></div>
+                    <pre style="margin-top: 5px;">&lt;div ng-tags="tags4" animate tag-typeahead="o for o in options" placeholder="Placeholder">&lt;/div></pre>
                 </div>
 
 
@@ -76,28 +91,6 @@
                 </div>
 
             </form>
-
-
-
-
-
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Regular bootstrap input field</h4>
-                </div>
-                <div class="col-md-4">
-                    <input type="text" class="form-control"/>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div ng-tags="tags2" close animate tag-typeahead=" o for o in typeaheadSource2"></div>        
-                </div>
-                <div class="col-md-4">
-                    <div ng-tags="tags" close animate tag-typeahead="o.cc_iso_a2 as o.country_name for o in typeaheadSource"></div>
-                </div>
-
-            </div>
         </div>
     </body>
 </html>

@@ -5,7 +5,7 @@ var myApp = angular.module("myApp", ["NgTagsInput","ngAnimate"]);
 /*
  * Controller [TestController] in module "myApp"
  */
-myApp.controller("TestController", ["$scope", function($scope) { console.log("asd");
+myApp.controller("TestController", ["$scope", function($scope) {
         $scope.tags1 = ["sample", "tag"];
         $scope.tags2 = ["sample", "tag"];
         $scope.tags3 = ["sample", "tag"];
