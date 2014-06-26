@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>NgTagsInput</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-animate.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="libs/ng-tags/ng-tags.css"/>
+        <script type="text/javascript" src="libs/ng-tags/ng-tags.js"></script>
+        <script type="text/javascript" src="libs/controller.js"></script>
+    </head>
+    <body ng-app="myApp">
+        <div class="container well" ng-controller="TestController">
+            <div class="row">
+                <div class="col-md-4">
+                    <div ng-tags="tags" close animate tag-typeahead="o.cc_iso_a2 as o.country_name for o in typeaheadSource"></div>
+                </div>
+                <div class="col-md-4">
+                    <div ng-tags="tags2" close animate tag-typeahead=" o for o in typeaheadSource2"></div>        
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control"/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
